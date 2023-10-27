@@ -1,0 +1,19 @@
+.flex-pai {
+    background: blue;
+    height: 600px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    /*Seleciona cada item*/
+    align-content: center;
+    /*Seleciona o conjunto (acaba anulando o align-items)*/
+}
+
+.flex-pai div {
+    background: white;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 30px;
+    text-align: center;
+}

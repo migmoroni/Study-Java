@@ -1,0 +1,11 @@
+.borda {
+    border: 1px solid red;
+}
+
+p{
+    display: inline;
+}
+
+h1{
+    display: inline;
+}

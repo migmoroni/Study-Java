@@ -1,0 +1,30 @@
+*{
+    padding: 20px;
+}
+
+body{
+    background: #f1f1f1;
+}
+
+h1, p{
+    color: green;
+    text-align: center;
+}
+
+.vermelho{
+    color: red;
+}
+
+.center{
+    text-align: center;
+}
+
+.fonte-30{
+    font-size: 30px;
+}
+
+#teste{
+    color: blue;
+    background: yellow;
+}
+

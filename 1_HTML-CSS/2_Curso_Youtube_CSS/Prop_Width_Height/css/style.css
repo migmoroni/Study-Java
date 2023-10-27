@@ -1,0 +1,63 @@
+body{
+    background-color: white;
+}
+
+h1{
+    color: #ffffff;
+    border-top: 5px solid rgb(0, 255, 21);
+    border-left: 5px solid rgb(247, 0, 0);
+    border-right: 5px solid rgb(0, 17, 255);
+    border-bottom: 5px solid rgb(255, 208, 0);
+
+    border-radius: 30px;
+    text-align: center;
+    background: black;
+
+    margin: 30px 70px 150px 20px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 70px;
+}
+
+p{
+    color: rgb(255, 0, 0);
+    margin-left: 20px;
+}
+
+.exemplo-back{
+    height: 100px;
+    background-color: gray;
+    background-image: url(../img/pexels-lukas-kloeppel-466685.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 100px;
+}
+
+.exemplo-back-short-rand{
+    background: gray url(../img/pexels-adrien-olichon-2387793.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.botao{
+    margin-left: 33%;
+    background: green;
+    color: #ffffff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.botao:hover{
+    background: blue;
+}
+
+.teste{
+    max-width: 800px;
+    height: 150px;
+    background: cyan;
+}

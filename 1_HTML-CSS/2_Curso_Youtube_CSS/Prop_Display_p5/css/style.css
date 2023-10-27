@@ -1,0 +1,29 @@
+.borda {
+    border: 1px solid red;
+}
+
+.azul {
+    background: blue;
+}
+
+.vermelho {
+    background: red;
+}
+
+.verde {
+    background: green;
+}
+
+div {
+    display: inline-block;
+    width: 20%;
+    height: 150px;
+}
+
+a.botao {
+    display: inline-block;
+    margin-top: 100px;
+    width: 50%;
+    height: 50px;
+    text-align: center;
+}

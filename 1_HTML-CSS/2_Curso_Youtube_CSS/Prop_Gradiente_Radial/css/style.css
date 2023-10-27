@@ -1,0 +1,17 @@
+#gradiente1 {
+    width: 100%;
+    height: 300px;
+    background-image: radial-gradient(red, orange);
+}
+
+#gradiente2 {
+    width: 100%;
+    height: 300px;
+    background-image: radial-gradient(red 50%, orange 50%);
+}
+
+#gradiente3 {
+    width: 100%;
+    height: 300px;
+    background-image: radial-gradient(red 1%, white 99%);
+}

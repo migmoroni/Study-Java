@@ -1,0 +1,19 @@
+.flex-pai {
+    background: blue;
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width:600px) {
+    .flex-pai {
+        flex-direction: column;
+    }
+}
+
+.flex-pai div {
+    background: white;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 30px;
+    text-align: center;
+}
