@@ -1,0 +1,14 @@
+{
+  "<!DOCTYPE": 1,
+  "html>\n<html": 2,
+  "lang=\"en\">\n\n<head>\n": 3,
+  "": 4,
+  "<meta": 5,
+  "charset=\"UTF-8\">\n": 6,
+  "name=\"viewport\"": 7,
+  "content=\"width=device-width,": 8,
+  "initial-scale=1.0\">\n": 9,
+  "<title>Document</title>\n</head>\n\n<body>\n\n": 10,
+  "<script": 11,
+  "src=\"aula-001.js\"></script>\n</body>\n\n</html>": 12
+}

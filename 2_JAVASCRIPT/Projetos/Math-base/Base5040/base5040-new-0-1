@@ -1,0 +1,20 @@
+const base71Chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%&*;/";
+
+function base5040SimplifiedToDecimal(str) {
+    return str.split('').reduce((acc, char) => acc * 71 + base71Chars.indexOf(char), 0);
+}
+
+function decimalToBase5040Simplified(decimal) {
+    let result = '';
+    while (decimal > 0) {
+        result = base71Chars[decimal % 71] + result;
+        decimal = Math.floor(decimal / 71);
+    }
+    return result || '0';
+}
+
+function isValidChar(char) {
+    return base71Chars.includes(char);
+}
+
+console.log(decimalToBase5040Simplified("10"))

@@ -1,0 +1,8 @@
+Criar um algoritmo, que após o clique do botão "Generate" pelo usuário, pega as senhas informadas nos 3 campos de formulário, e as processa da seguinte forma:
+
+Para cada uma das três senhas, gera um hash256.
+Os três hashes sha256 gerados, são concatenados em sequencia.
+Desta sequencia, é gerado um novo e único hash sha256.
+
+
+Uma barra de carregamento, de cor azul claro, abaixo da barra de força da senha final, mostra o processo de carregamento da geração da senha final.

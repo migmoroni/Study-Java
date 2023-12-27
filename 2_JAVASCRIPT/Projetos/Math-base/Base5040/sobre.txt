@@ -1,0 +1,116 @@
+Decimal para Base5040s
+
+----------
+MAIOR
+----------
+se 5042
+
+{
+5042 - 5040 = 2
+
+2 < 5040 ?
+sim, entao para
+} se nao, loop
+
+1 + 2
+
+passa cada valor pela conversao:
+
+'0102'
+----------
+MENOR
+----------
+se 352
+
+comparação: 352 >= 5039 ? : Não
+
+352
+
+conversão para base5040:
+
+'4*'
+
+resultado: '4*'
+
+----------
+IGUAL
+----------
+
+se 5040
+
+comparação: 5040 <= 5040
+
+5040 / 5040 = 1 , se igual ou maior que 1: a supercasa 00
+
+1 + 00
+
+conversão para base5040, cada parte separada, e depois juntando:
+
+'100'
+
+----------
+MAIOR
+----------
+
+se 25401600
+
+comparação: 25401600 <= 5040
+
+25401600 / 5040 = 5040 , se igual ou maior que 1: a supercasa 00
+
+5040 <= 5040 
+
+5040 / 5040 = 1 , se igual ou maior que 1: a supercasa 00
+
+1 + 00 + 00
+
+tradução de cada parte com o convertor de decimal para base5040s
+
+resultado em base5040: 10000
+
+----------
+VALORES MAIS QUEBRADOS
+----------
+
+se 5050
+
+comparação: 5050 <= 5040 , se igual ou menor que 5040
+
+5050 / 5040 = 1 
+5050 - 5040 = 10, se menor ou igual a 5040, coloca supercasa 00. Se não, copia numero para esta casa.
+
+'10'
+
+1  <= 5040, se 
+
+------------
+
+valor decimal: decimal
+
+decimal <= 5040
+
+decimal / 5040 = result
+
+
+-----------
+Meta: '/;'/;'/;' 3 supercasas
+
+value = 5050;
+
+block = 5040;
+
+Enquanto value > 5039, faça {
+
+index = 0
+
+value = value - block  //ex: value(5050) - block(5040) = value(10);
+
+array[index] = value //10
+index ++;
+
+}
+
+se value <
+
+
+Se não, faça:

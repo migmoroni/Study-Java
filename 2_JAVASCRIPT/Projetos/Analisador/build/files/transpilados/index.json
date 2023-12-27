@@ -1,0 +1,39 @@
+{
+  "tag": "html",
+  "attributes": {
+    "lang": "en"
+  },
+  "children": [
+    {
+      "tag": "head",
+      "attributes": {},
+      "children": [
+        {
+          "tag": "meta",
+          "attributes": {
+            "charset": "UTF-8"
+          },
+          "children": []
+        },
+        {
+          "tag": "meta",
+          "attributes": {
+            "name": "viewport",
+            "content": "width=device-width, initial-scale=1.0"
+          },
+          "children": []
+        },
+        {
+          "tag": "title",
+          "attributes": {},
+          "children": []
+        }
+      ]
+    },
+    {
+      "tag": "body",
+      "attributes": {},
+      "children": []
+    }
+  ]
+}
