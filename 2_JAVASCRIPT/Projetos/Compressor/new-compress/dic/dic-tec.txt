@@ -1,0 +1,39 @@
+css:
+
+1- Selector
+
+ex: body {
+    xxx: yyy;
+}
+
+2- Property
+
+ex: xxx {
+    background: yyy;
+}
+
+3- Property value
+
+ex: xxx {
+    xxx: aqui;
+}
+
+4- Pseudo-classes:
+
+ex: xxx:hover {
+    xxx: yyy;
+}
+
+5- Pseudo-elementos:
+
+ex: xxx::after {
+    xxx: yyy;
+}
+
+6- Regra At
+
+ex: @media
+
+7- Funções:
+
+cos()

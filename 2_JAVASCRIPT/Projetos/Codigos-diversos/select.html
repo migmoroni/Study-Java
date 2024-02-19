@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Set Selector</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f2f2f2;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .select-box {
+      padding: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 200px;
+      text-align: center;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .options {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      z-index: 1;
+      width: 200px;
+      text-align: center;
+    }
+
+    .option {
+      padding: 12px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .dropdown:hover .options {
+      display: block;
+    }
+
+    .dropdown.active .options {
+      display: block;
+    }
+
+    .option:hover {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <div class="dropdown">
+    <div class="select-box" onclick="toggleDropdown()">Choose a Character Set</div>
+    <div class="options" onclick="selectOption(event)">
+      <div class="option" data-value="all">All from the Keyboard</div>
+      <div class="option" data-value="decimal">Decimal</div>
+      <div class="option" data-value="unicode">Unicode</div>
+    </div>
+  </div>
+
+  <div id="result"></div>
+
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.querySelector('.dropdown');
+      dropdown.classList.toggle('active');
+    }
+
+    function selectOption(event) {
+      const selectedOption = event.target.dataset.value;
+      document.getElementById('result').textContent = `You selected: ${selectedOption}`;
+      toggleDropdown();
+    }
+  </script>
+</body>
+</html>

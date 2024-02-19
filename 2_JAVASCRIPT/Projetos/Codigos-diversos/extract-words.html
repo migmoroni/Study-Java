@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leitura de Arquivo</title>
+</head>
+<body>
+
+<input type="file" id="fileInput" style="display: none;">
+<button onclick="openFile()">Selecionar Arquivo</button>
+<input type="text" id="output" readonly>
+
+<script>
+function openFile() {
+  // Cria um input do tipo file invisível
+  var fileInput = document.getElementById('fileInput');
+  fileInput.type = 'file';
+  fileInput.accept = '.txt, .pdf, .epub';
+
+  // Adiciona um ouvinte de eventos para quando o usuário selecionar um arquivo
+  fileInput.addEventListener('change', function() {
+    readFile(fileInput);
+  });
+
+  // Simula o clique no input do arquivo
+  fileInput.click();
+}
+
+function readFile(fileInput) {
+  var file = fileInput.files[0];
+  if (file) {
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      var content = e.target.result.substring(0, 17933); // Lê até os primeiros 17933 caracteres
+      var words = extractWords(content);
+      displayWords(words);
+    };
+
+    reader.readAsText(file);
+  }
+}
+
+function extractWords(content) {
+  // Remove espaços no início e no final de cada palavra
+  var words = content.split(/[\s]+/);
+
+  // Filtra palavras vazias
+  words = words.filter(function(word) {
+    return word.length > 0;
+  });
+
+  return words.join(' ');
+}
+
+function displayWords(words) {
+  // Exibe as palavras no input
+  var outputInput = document.getElementById('output');
+  outputInput.value = words;
+}
+</script>
+
+</body>
+</html>

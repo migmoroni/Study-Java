@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Hash SHA-256</title>
+</head>
+<body>
+
+<input type="file" id="fileInput" onchange="calcularHash()">
+<br>
+<input type="text" id="hashOutput" readonly>
+
+<script>
+async function calcularHash() {
+    const fileInput = document.getElementById('fileInput');
+    const hashOutput = document.getElementById('hashOutput');
+
+    const file = fileInput.files[0];
+
+    if (file) {
+        try {
+            const buffer = await lerArquivoComoBuffer(file);
+
+            const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
+
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+
+            hashOutput.value = hashHex;
+        } catch (error) {
+            console.error(error);
+        }
+    }
+}
+
+function lerArquivoComoBuffer(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            resolve(e.target.result);
+        };
+
+        reader.onerror = function(error) {
+            reject(error);
+        };
+
+        reader.readAsArrayBuffer(file);
+    });
+}
+
+</script>
+
+</body>
+</html>

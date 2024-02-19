@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrastar Botão</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            position: relative;
+            width: 300px;
+            height: 30px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+
+        #dragButton {
+            cursor: grab;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 30px;
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            user-select: none;
+        }
+
+        #result {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="dragButton" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)">Arraste-me</div>
+</div>
+
+<input id="result" type="text" readonly>
+
+<script>
+    function handleDragStart(event) {
+        // Impede o comportamento padrão para permitir o arrasto
+        event.preventDefault();
+    }
+
+    function handleDragOver(event) {
+        // Impede o comportamento padrão para permitir o soltar
+        event.preventDefault();
+    }
+
+    function handleDrop(event) {
+        const dragButton = document.getElementById('dragButton');
+        const resultInput = document.getElementById('result');
+
+        const container = document.getElementById('container');
+        const containerWidth = container.clientWidth - dragButton.clientWidth;
+
+        let newPositionX = event.clientX - container.getBoundingClientRect().left;
+
+        // Limita a posição do botão dentro do contêiner
+        if (newPositionX < 0) {
+            newPositionX = 0;
+        } else if (newPositionX > containerWidth) {
+            newPositionX = containerWidth;
+        }
+
+        // Define a nova posição do botão
+        dragButton.style.left = newPositionX + 'px';
+
+        // Calcula e exibe o número correspondente no input readonly
+        const minNumber = 4;
+        const maxNumber = 30;
+        const percentage = (newPositionX / containerWidth) * 100;
+        const calculatedNumber = Math.round((maxNumber - minNumber) * (percentage / 100)) + minNumber;
+        resultInput.value = calculatedNumber;
+    }
+</script>
+
+</body>
+</html>

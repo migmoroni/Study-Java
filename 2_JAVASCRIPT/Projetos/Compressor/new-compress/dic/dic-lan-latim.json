@@ -1,0 +1,125 @@
+{
+    "a": {
+        "adipisci": "1001",
+        "aliquam": "1002",
+        "amet": "1003",
+        "architecto": "1004",
+        "assumenda": "1005"
+    },
+    "b": {
+        "beatae": "2001",
+        "blanditiis": "2002"
+    },
+    "c": {
+        "consectetur": "3001",
+        "consequatur": "3002",
+        "corporis": "3003"
+    },
+    "d": {
+        "dignissimos": "4001",
+        "dolorem": "4002",
+        "doloremque": "4003",
+        "doloribus": "4004",
+        "ducimus": "4005"
+    },
+    "e": {
+        "eius": "5001",
+        "eligendi": "5002",
+        "eos": "5003",
+        "est": "5004",
+        "eveniet": "5005"
+    },
+    "f": {
+        "fugit": "6001"
+    },
+    "g": {
+        "harum": "7001"
+    },
+    "h": {
+        "hic": "8001",
+        "illo": "8002",
+        "inventore": "8003",
+        "ipsa": "8004",
+        "iste": "8005"
+    },
+    "i": {
+        "iusto": "9001"
+    },
+    "l": {
+        "laboriosam": "10001",
+        "laborum": "10002",
+        "laudantium": "10003",
+        "libero": "10004"
+    },
+    "m": {
+        "magnam": "11001",
+        "magni": "11002",
+        "maiores": "11003",
+        "maxime": "11004",
+        "minus": "11005"
+    },
+    "n": {
+        "natus": "12001",
+        "necessitatibus": "12002",
+        "nesciunt": "12003",
+        "nisi": "12004",
+        "nobis": "12005"
+    },
+    "o": {
+        "odio": "13001",
+        "officia": "13002",
+        "omnis": "13003",
+        "optio": "13004",
+        "odit": "13005"
+    },
+    "p": {
+        "pariatur": "14001",
+        "perferendis": "14002",
+        "perspiciatis": "14003",
+        "placeat": "14004",
+        "possimus": "14005"
+    },
+    "q": {
+        "quaerat": "15001",
+        "quas": "15002",
+        "quis": "15003",
+        "quod": "15004"
+    },
+    "r": {
+        "reiciendis": "16001",
+        "reprehenderit": "16002",
+        "rerum": "16003"
+    },
+    "s": {
+        "sapiente": "17001",
+        "saepe": "17002",
+        "sint": "17003",
+        "sit": "17004",
+        "soluta": "17005"
+    },
+    "t": {
+        "tempora": "18001",
+        "temporibus": "18002",
+        "totam": "18003"
+    },
+    "u": {
+        "ullam": "19001",
+        "unde": "19002",
+        "ut": "19003"
+    },
+    "v": {
+        "vel": "20001",
+        "veritatis": "20002",
+        "vero": "20003",
+        "vitae": "20004"
+    },
+    "x": {
+        "ex": "21001"
+    },
+    "y": {
+        "atque": "22001"
+    },
+    "z": {
+        "zantium": "23001"
+    }
+}

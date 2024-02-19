@@ -25,29 +25,53 @@ function getUniqueFilename(baseFilename, folder) {
     return filename;
 }
 
-function compressWithDictionary(text) {
+function compressHTML(content) {
     let dictionary = {};
     let result = [];
-    let words = text.split(' ');
+    let terms = extractHTMLTerms(content);
 
-    for (let word of words) {
-        if (!dictionary[word]) {
-            dictionary[word] = Object.keys(dictionary).length + 1;
+    terms.forEach(term => {
+        if (!dictionary[term]) {
+            dictionary[term] = Object.keys(dictionary).length + 1;
         }
-        result.push(dictionary[word]);
-    }
+        result.push(dictionary[term]);
+    });
 
     return { dictionary, compressed: result.join(' ') };
 }
 
-function decompressWithDictionary(compressed, dictionary) {
-    let decompressed = compressed.split(' ').map(code => {
-        for (let word in dictionary) {
-            if (dictionary[word] == code) {
-                return word;
+function extractHTMLTerms(content) {
+    let terms = [];
+    let term = '';
+    let inTag = false;
+
+    for (let char of content) {
+        if (char === '<') {
+            inTag = true;
+            term = '<';
+        } else if (char === '>') {
+            inTag = false;
+            term += '>';
+            terms.push(term);
+            term = '';
+        } else {
+            if (inTag) {
+                term += char;
             }
         }
-    }).join(' ');
+    }
+
+    return terms;
+}
+
+function decompressHTML(compressed, dictionary) {
+    let decompressed = compressed.split(' ').map(code => {
+        for (let term in dictionary) {
+            if (dictionary[term] == code) {
+                return term;
+            }
+        }
+    }).join('');
 
     return decompressed;
 }
@@ -56,15 +80,18 @@ function compressFile(filename) {
     const sourceFilePath = `files/source/${filename}`;
     const content = fs.readFileSync(sourceFilePath, 'utf-8');
 
-    const compressedResult = compressWithDictionary(content);
+    if (path.extname(filename) === '.html') {
+        const compressedResult = compressHTML(content);
+        const compressedFilename = getUniqueFilename(filename, 'comprimidos');
+        const dicionarioFilename = getUniqueFilename(`${filename.split('.')[0]}-dicionario.json`, 'dicionarios');
 
-    const compressedFilename = getUniqueFilename(filename, 'comprimidos');
-    const dicionarioFilename = getUniqueFilename(`${filename.split('.')[0]}-dicionario.json`, 'dicionarios');
+        fs.writeFileSync(`files/comprimidos/${compressedFilename}`, compressedResult.compressed);
+        fs.writeFileSync(`files/dicionarios/${dicionarioFilename}`, JSON.stringify(compressedResult.dictionary, null, 2));
 
-    fs.writeFileSync(`files/comprimidos/${compressedFilename}`, compressedResult.compressed);
-    fs.writeFileSync(`files/dicionarios/${dicionarioFilename}`, JSON.stringify(compressedResult.dictionary, null, 2));
-
-    console.log(`Arquivo comprimido: ${compressedFilename}`);
+        console.log(`Arquivo comprimido: ${compressedFilename}`);
+    } else {
+        console.log(`O arquivo ${filename} não é um arquivo HTML e não será comprimido.`);
+    }
 }
 
 function decompressFile(filename) {
@@ -75,11 +102,15 @@ function decompressFile(filename) {
     try {
         const dictionary = JSON.parse(fs.readFileSync(dictionaryPath, 'utf-8'));
 
-        const descomprimidosFilename = getUniqueFilename(filename, 'descomprimidos');
-        const decompressedText = decompressWithDictionary(compressedContent, dictionary);
+        if (path.extname(filename) === '.html') {
+            const descomprimidosFilename = getUniqueFilename(filename, 'descomprimidos');
+            const decompressedText = decompressHTML(compressedContent, dictionary);
 
-        fs.writeFileSync(`files/descomprimidos/${descomprimidosFilename}`, decompressedText);
-        console.log(`Arquivo descomprimido: ${descomprimidosFilename}`);
+            fs.writeFileSync(`files/descomprimidos/${descomprimidosFilename}`, decompressedText);
+            console.log(`Arquivo descomprimido: ${descomprimidosFilename}`);
+        } else {
+            console.log(`O arquivo ${filename} não é um arquivo HTML e não será descomprimido.`);
+        }
     } catch (error) {
         console.error(`Erro ao descomprimir ${filename}:`, error.message);
     }
