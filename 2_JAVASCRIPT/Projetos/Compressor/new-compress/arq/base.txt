@@ -1,0 +1,71 @@
+Motivos de não ter sido implementados:
+
+Problema 1: Necessidade de uma haver a tradução do lado do cliente, pre instalado e atualizado frequentemente.
+Solução 1: Navegadores padronizarem o uso desta tradução
+
+Problema 2: Motores de busca não entendenderem e não aplicarem SEO
+Solução 2: Adotarem tambem esta tradução
+
+
+Consequencias possiveis, se solucionados os problemas anteriores:
+
+Problema 3: Novos modelos de tradução são propostos por vários grupos
+Solução 3: Centralizar num grupo único a manutenção, possivelmente com apoio da W3C, garantindo unicidade.
+
+
+
+
+Processo de tradução via algoritmo:
+
+1 - É realizado a leitura do arquivo, onde é selecionados palavras, sendo estas, tudo que é separado por espaços, ("<" e ">") e "".
+
+2 - De cada palavra:
+
+2.1 - É separado seus caracteres em um array.
+2.2 - É traduzido cada caractere em mesmo array, para um valor em decimal, consistindo na posição que este caractere possui, na sequencia de caracteres Unicode.
+
+3 - É difinido a base de tradução:
+
+3.1 - Se um dos numeros for maior que 7536, deve ser traduzido na sequencia de caracteres Unicode. Se não, deve ser traduzido para a base110.
+
+Se 
+4 - Se:
+
+Maior, é copiado cada unidade caracteres, para um array de calculos de apenas 1 casa.
+Deve ser traduzido para 
+
+Menor, é copiado cada dupla de caracteres, para um array de calculos de apenas 2 casas.
+
+
+z  = 26
+za = 26 01
+zb = 26 02
+
+** = 99 99
+
+Ou traduz o numero decimal para hexadecimal, permitindo que seja buscado:
+
+** = FF FF = 65536, no entanto permitindo representar 256 caracteres, em vez de apenas 100
+
+Ou ja escreve em hexadecimal puro.
+
+0 =  0 ---> mudar para 2
+...
+9 =  9
+a =  a
+...
+f =  f
+g = 10
+z = 23
+
+ÿ = BC = 188
+
+zÿ = 23 BC = 35 188 = 1 uni
+
+ÿÿ = BC BC = 188 188 = 1 uni
+
+
+
+Processo de tradução via dicionario:
+
+

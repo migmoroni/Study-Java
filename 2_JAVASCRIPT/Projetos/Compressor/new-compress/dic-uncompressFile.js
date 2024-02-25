@@ -1,3 +1,5 @@
+//Copyright Miguel Eduardo Senna Moroni - MIT License
+
 const fs = require('fs');
 const path = require('path');
 

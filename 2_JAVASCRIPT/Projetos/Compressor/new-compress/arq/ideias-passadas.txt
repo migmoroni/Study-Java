@@ -1,0 +1,85 @@
+1-
+
+
+
+ÿÿÿ = BC BC, BC (pode haver um sistema que, caso a palavra chegue a ter uma terceira letra, faça uma forma de adicionar mais essa possibilidade)
+
+188 + 188 + 188
+
+Assim, a cada letra, aumenta o multiplicador.
+
+No retorno, é onde mora o problema. Se for 60 + 60 + 60, é menor que 188, 180. Como ele saberá montar o retorno ?
+Saberá pois cada casa inicia atraves de uma base minima.
+
+Sendo assim:
+0 a 188 + 189 a 376 + 377 a 564 + ... = cada uma contendo 188 indices para as letras desejadas
+60 + 248 + 
+
+
+Sendo assim, dispensa dicionarios. Incluir depois até 512 caracteres, visando palavras de até 100 letras, ou, sequencias de leitura, com 100 letras por vez.
+
+Sequencias de leitura permite usar 100 ciclos, condensando espaços e tudo que tiver no caminho. A cada 100, reseta a contagem.
+
+
+2-
+
+9, 10
+
+0 -> 0
+9 -> 9
+10 -> 0, se 17 -> 7
+
+90
+
+9 -> 9
+0 -> 0 + 10 = 10, se 7 -> 7 + 10 = 17
+
+a -> a
+az -> a + z (z + 26) = 
+
+azz => a + z + z
+
+1 a 4 = intervalo
+
+4 * 4 * 4 * 4 = 256
+4 * 4 * 4 * 3 = 192
+4 * 4 * 3 * 4 = 192
+
++7 +6 +5 +4
+11 * 10 * 9 * 8 = 7920
+11 * 10 * 9 * 7 = 6930
+11 * 10 * 8 * 8 = 7040
+8 * 7 * 6 * 5 = 1680
+
++7 +6 +5 +4
+11 * 10 * 9 * 8 = 7920 / 20 = 396
+11 * 10 * 9 * 7 = 6930 
+11 * 10 * 8 * 8 = 7040
+8 * 7 * 6 * 5 = 1680
+
+
+0 a 255
+
++257 +193 +128 +64
+255 * 255 * 255 * 255
+0 * 0 * 0 * 0
+
+512 * 448 * 383 * 319 = 28 185 722 880
+257 × 193 × 128 × 64 = 406 331 392
+
+
+
+valor: 0 a 255
+add: 2 a 257 => valor + 2 (ex: 0+2 = 2, entao 0+2= 2, 5+2 = 7, entao 5+7 = 12) 
+
+2 a 512 (retorno: -2 e /2)
+
++40 +30 +20 +10
+512 * 512 * 512 * 512
+2 * 2 * 2 * 2
+
+
+valor: 0 a 255
+
+
+

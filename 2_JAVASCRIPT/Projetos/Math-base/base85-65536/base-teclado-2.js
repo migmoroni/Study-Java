@@ -62,7 +62,7 @@ function encodeBase315(data) {
 }
 
 // Exemplo de uso
-const input = 'Seus dados aqui';
+const input = 'Se';
 const hash = sha384(input);
 const unicodePrintableChars = getUnicodePrintableChars();
 const customBase85Hash = encodeCustomBase85(hash, unicodePrintableChars);

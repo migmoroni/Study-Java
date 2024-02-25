@@ -1,38 +1,79 @@
+//Copyright Miguel Eduardo Senna Moroni - MIT License
+
 const fs = require('fs');
 const readline = require('readline');
-const { compressFile } = require('./compressFile');
-const { uncompressFile } = require('./uncompressFile');
+
+const { compressFile } = require('./dic-compressFile');
+const { uncompressFile } = require('./dic-uncompressFile');
+const { textWindow } = require('./about');
+const { clearFiles, clearSelect } = require('./clearFiles');
 
 function main() {
-    console.log("Bem-vindo ao programa de compressão de texto!");
-    console.log("Opções:");
-    console.log("1 - Comprimir arquivos");
-    console.log("2 - Descomprimir arquivos");
-    console.log("3 - Limpar pasta 'files'");
-    console.log("4 - Sobre este programa");
-
     const rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout
     });
 
-    rl.question('Escolha uma opção: ', (subOption) => {
-        if (subOption === '1') {
-            const files = fs.readdirSync('source');
-            files.forEach(file => compressFile(file));
-        } else if (subOption === '2') {
-            const files = fs.readdirSync('files/com');
-            files.forEach(file => uncompressFile(file));
-        } else if (subOption === '3') {
-            // Implementar a lógica para limpar pasta 'files'
-        } else if (subOption === '4') {
-            // Implementar a lógica para mostrar informações sobre o programa
+    console.log("Programa de Compressão de Linguagens");
+    console.log('Opções:');
+    console.log('1 - Compressão por algoritmo');
+    console.log('2 - Compressão por dicionario');
+    console.log("3 - Limpar pasta 'files'");
+    console.log("4 - Sobre este programa");
+
+    //createDirectories();
+
+    rl.question('Escolha uma opção: ', (option) => {
+        if (option === '1') {
+            console.log("Opções:");
+            console.log("1 - Comprimir arquivos");
+            console.log("2 - Descomprimir arquivos");
+
+            rl.question('Escolha uma opção: ', (subOption) => {
+                if (subOption === '1') {
+                    const files = fs.readdirSync('source');
+                    files.forEach(file => compressFile(file));
+                } else if (subOption === '2') {
+                    const files = fs.readdirSync('files/com');
+                    files.forEach(file => uncompressFile(file));
+                } else { 
+                    console.log('Opção inválida.');
+                }
+        
+                rl.close();
+            });
+            
+        } else if (option === '2') {
+            console.log("Opções:");
+            console.log("1 - Comprimir arquivos");
+            console.log("2 - Descomprimir arquivos");
+            
+            rl.question('Escolha uma opção: ', (subOption) => {
+                if (subOption === '1') {
+                    const files = fs.readdirSync('source');
+                    files.forEach(file => compressFile(file));
+                } else if (subOption === '2') {
+                    const files = fs.readdirSync('files/com');
+                    files.forEach(file => uncompressFile(file));
+                } else { 
+                    console.log('Opção inválida.');
+                }
+        
+                rl.close();
+            });
+        } else if (option === '3' || '31' || '32' || '33') {
+            clearSelect(option).forEach(file => clearFiles(file));
+        } else if (option === '4') {
+            textWindow();
         } else { 
             console.log('Opção inválida.');
         }
-
+        
         rl.close();
+        
     });
+
+    
 }
 
 main();

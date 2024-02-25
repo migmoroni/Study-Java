@@ -1,0 +1,5 @@
+ZPAQ
+https://github.com/zpaq/zpaq
+
+Hutter Prize
+Premio de compressao de dados
