@@ -101,6 +101,7 @@ function main() {
 
                 rl.close();
             });
+            
         } else if (option === '2') {
             rl.question('Digite o texto a ser comprimido: ', (inputText) => {
                 compressCommandLine(inputText);

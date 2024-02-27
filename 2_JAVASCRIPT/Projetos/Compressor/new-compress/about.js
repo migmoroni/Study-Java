@@ -8,7 +8,7 @@ All Languages
 
 Dictionary mode:
 Tech Languages: HTML, CSS and Javascript;
-Human Languages: English, Portuguese and Latim;
+Human Languages: English, Portuguese, Spanish and Latim;
 
 Global Filters:
 HTML mode with and without Head;

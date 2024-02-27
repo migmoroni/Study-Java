@@ -69,3 +69,30 @@ zÿ = 23 BC = 35 188 = 1 uni
 Processo de tradução via dicionario:
 
 
+Dicionario me parece ser uma opção a continuar mantendo. Ao menos como primeiro processo.
+Adicionalmente, incluir dicionarios de ocorrencias continuas, para reduzir frases inteiras.
+Após isso, huffman me parece bom como ultima camada, para reduzir mais ainda.
+
+=>
+
+1º Filtros com regex para compactar corretamente e usar o máximo possivel de unicode de poucos bytes
+2º Dicionarios especificos e gerais dos idiomas e linguagens usados
+3º Aplicação de huffman (ninebranch)
+
+camada 0: 1 - 9 (9)
+camada 1: 1 - 8 (81)
+camada 2: A - P (36)
+
+
+Nos dicionarios, utilizar binário nos indices pode ser melhor.
+Tambem, utilizar de simbolos repetidos em situações padrões, pode reduzir tamanho ao aumentar redundancias.
+
+
+====
+
+A conclusao é que a compressão buscada, não deveria ser tentar ser a mais intrincada e menor, pois existem já metodos muito melhores e bem pensados. Onde para que eu consiga abordar e desenvolver um a altura de competir, preciso de mais estudo que hoje.
+Tambem, alterar a semantica traria talvez mais pontos negativos além da unica que seria a redução em si. De forma que isso explica o ponto disso não ser usado ainda.
+Sendo assim, deve ser buscado uma compressão por dicionário, por substituição de palavras, por simbolos.
+E a segunda passagem com a arvore, permite buscar tudo aquilo que não foi premetitado pelo dicionario.
+
+Sendo assim, a árvore pode ser de 0 a 9, ou talvez, em hexadecimal direto.

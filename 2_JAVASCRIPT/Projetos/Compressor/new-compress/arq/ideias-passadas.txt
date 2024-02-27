@@ -70,7 +70,7 @@ azz => a + z + z
 
 
 valor: 0 a 255
-add: 2 a 257 => valor + 2 (ex: 0+2 = 2, entao 0+2= 2, 5+2 = 7, entao 5+7 = 12) 
+add: 2 a 257 => valor + 2 (ex: 0 +2 = 2, entao 0+2= 2, ex: 5 +2 = 7, entao 5+7 = 12) 
 
 2 a 512 (retorno: -2 e /2)
 
@@ -82,4 +82,31 @@ add: 2 a 257 => valor + 2 (ex: 0+2 = 2, entao 0+2= 2, 5+2 = 7, entao 5+7 = 12)
 valor: 0 a 255
 
 
+Dicionario me parece ser uma opção a continuar mantendo. Ao menos como primeiro processo.
+Adicionalmente, incluir dicionarios de ocorrencias continuas, para reduzir frases inteiras.
+Após isso, huffman me parece bom como ultima camada, para reduzir mais ainda.
 
+=>
+
+1º Filtros com regex para compactar corretamente e usar o máximo possivel de unicode de poucos bytes
+2º Dicionarios especificos e gerais dos idiomas e linguagens usados
+3º Aplicação de huffman (ninebranch)
+
+camada 0: 1 - 9 (9)
+camada 1: 1 - 8 (81)
+camada 2: A - P (36)
+
+
+
+
+pedido de mudança ao gpt:
+Modifique nossa árvore NineBranches, para gerar ao inves de ramos de 1 a 9, ter a seguinte estrutura:
+
+Utilizar de duas árvores de huffman completas:
+Onde a primeira é uma árvore de huffman completa, com apenas uso de digitos 0 e 1. Esta árvore é usada apenas para palavras de até 3 caracteres de tamanho.
+
+E uma segunda, sendo uma árvore não binária, utilizando o modelo de 60 ramos: usando os caracteres "2 - 9", continuando em de "A - Z" e "a - z". Esta árvore é usada para palavras maiores que 3 caracteres de tamanho.
+
+No arquivo a ser montado a compressão, de nome "nome-do-arquivo"-dic.bin, quando é alternado para uso da segunda árvore, é inserido os caracteres reservados "1110", onde em um chamado "nome-do-arquivo"-dic-2.bin
+
+Na descompressão, é lido o arquivo dic.bin primeiro, onde ao encontrar sempre um "111", ele le o primeiro elemento que encontra no 

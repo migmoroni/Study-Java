@@ -3,7 +3,8 @@
         {
             "type": "1",
             "version": "1",
-            "dic": ["tec", "full-html"]
+            "dic": ["tec", "full-html"],
+            "unicode": "16"
         }
     ],
     "1":{
