@@ -96,3 +96,30 @@ Sendo assim, deve ser buscado uma compressão por dicionário, por substituiçã
 E a segunda passagem com a arvore, permite buscar tudo aquilo que não foi premetitado pelo dicionario.
 
 Sendo assim, a árvore pode ser de 0 a 9, ou talvez, em hexadecimal direto.
+
+
+====
+
+A compressão de html, consiste em dois possiveis cenários:
+Completa ou sem head
+
+Versão 1: Comprime html, css e js padrão
+
+Versão 1: Estabelece um padrao de nomes para ids e classes. Uso do "patern BEM"
+
+BEM (Block, Element, Modifier) é uma metodologia de nomenclatura para escrever CSS mais escalável e sustentável. Ela fornece uma convenção clara para nomear classes em HTML e CSS, tornando o código mais legível e fácil de manter, especialmente em projetos grandes e complexos.
+
+A estrutura básica do BEM consiste em três partes:
+
+    Block (Bloco): O bloco é uma entidade independente que pode ser reutilizada e não depende do contexto em que é colocado. No HTML, um bloco é representado por uma classe CSS que descreve o seu propósito ou função geral. Exemplo: .button.
+
+    Element (Elemento): Um elemento é uma parte de um bloco e está semanticamente ligado a ele. Ele não deve ser usado fora do contexto do bloco pai. Os elementos são identificados como descendentes diretos de um bloco e são nomeados usando duas underscores (__). Exemplo: .button__text.
+
+    Modifier (Modificador): Um modificador é uma variante ou estado de um bloco ou elemento. Ele permite alterar a aparência ou o comportamento de um bloco ou elemento sem alterar a estrutura subjacente. Os modificadores são identificados como descendentes diretos de um bloco ou elemento e são nomeados usando duas hífens (--). Exemplo: .button--large.
+
+A vantagem do BEM é que ele cria um sistema de nomenclatura claro e previsível, o que facilita a compreensão do código por parte de outros desenvolvedores. Além disso, o BEM ajuda a evitar especificidade excessiva e a reduzir conflitos de nomenclatura entre diferentes partes do código CSS.
+
+passos após a conclusão:
+Criar site para facilmente comprimir ao colar texto e pedir que se comprima
+Criar lib e publicar no npm
+

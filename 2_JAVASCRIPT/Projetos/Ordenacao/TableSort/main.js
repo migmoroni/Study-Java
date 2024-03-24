@@ -91,7 +91,7 @@ function main() {
                     console.log('Opção inválida.');
                 }
         
-                //rl.close();
+                rl.close();
             });
         } else if (option === '3') {
             clearSelect(option).forEach(file => clearFiles(file));

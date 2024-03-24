@@ -18,9 +18,6 @@ function compressFile(fileName) {
 
         fs.writeFileSync(`files/com/${fileName}`, compressedContent, 'utf-8');
         console.log(`Arquivo ${fileName} comprimido com sucesso.`);
-    } if (extension === 'css') {
-
-
     } else {
     
         console.log(`Tipo de arquivo '${extension}' não suportado para compressão.`);
